@@ -3,6 +3,9 @@ import { galleryItems } from "./gallery-items.js";
 // Change code below this line
 
 const gallaryContainer = document.querySelector(".gallery");
+const gallaryItemsMarkup = createGallaryMarkup(galleryItems);
+
+gallaryContainer.innerHTML = gallaryItemsMarkup;
 
 function createGallaryMarkup(galleryItems) {
   return galleryItems
@@ -21,10 +24,6 @@ function createGallaryMarkup(galleryItems) {
 }
 
 gallaryContainer.addEventListener("click", onGallaryImageElClick);
-
-const gallaryItemsMarkup = createGallaryMarkup(galleryItems);
-
-gallaryContainer.innerHTML = gallaryItemsMarkup;
 
 function onGallaryImageElClick(event) {
   const isGallaryImageEl = event.target.classList.contains("gallery__image");
